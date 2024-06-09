@@ -60,6 +60,14 @@
                         <span class="hide-menu">Pengembalian</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/history" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-history"></i>
+                        </span>
+                        <span class="hide-menu">Tags History</span>
+                    </a>
+                </li>
             </ul>
 
         </nav>

@@ -12,7 +12,8 @@ class DaftarUserController extends Controller
      */
     public function index()
     {
-        //
+        $data = DaftarUser::all();
+        return view('daftarUser.index', compact('data'));
     }
 
     /**
@@ -28,7 +29,18 @@ class DaftarUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi data yang diterima
+        $validatedData = $request->validate([
+            'id_user' => 'required',
+            'nama' => 'required',
+            'no_telp' => 'required',
+        ]);
+
+        // Simpan data ke database
+        DaftarUser::create($validatedData);
+        
+        // Redirect ke halaman yang diinginkan, misalnya index
+        return redirect('daftar-user')->with('success', 'User baru berhasil ditambahkan!');
     }
 
     /**
@@ -44,22 +56,33 @@ class DaftarUserController extends Controller
      */
     public function edit(DaftarUser $daftarUser)
     {
-        //
+        // 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DaftarUser $daftarUser)
+    public function update(Request $request, $id)
     {
-        //
+        // Validasi data yang diterima
+        $validatedData = $request->validate([
+            'nama' => 'required',
+            'no_telp' => 'required',
+        ]);
+
+        // Simpan data ke database
+        DaftarUser::where('id', $id)->update($validatedData);
+        
+        // Redirect ke halaman yang diinginkan, misalnya index
+        return redirect('daftar-user')->with('success', 'User berhasil di perbarui!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DaftarUser $daftarUser)
+    public function destroy($id)
     {
-        //
+        DaftarUser::where('id', $id)->delete();
+        return redirect('daftar-user')->with('success', 'User berhasil di hapus!');
     }
 }

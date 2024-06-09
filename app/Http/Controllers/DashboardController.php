@@ -13,8 +13,7 @@ class DashboardController extends Controller
         return view('dashboard', compact('tanggal'));
     }
 
-    public function daftarUser() {
-        $users = DaftarUser::all();
-        return view('daftar-user', compact('users'));
+    public function history() {
+        return view('history');
     }
 }

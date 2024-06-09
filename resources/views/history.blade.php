@@ -25,38 +25,47 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach ($users as $user)
+                    {{-- <tbody>
+                        @foreach ($data as $item)
                             <tr>
                                 <td class="border-bottom-0">
                                     {{ $loop->iteration }}
                                 </td>
                                 <td class="border-bottom-0">
-                                    {{ $user->id_user }}
+                                    {{ $item->id_user }}
                                 </td>
                                 <td class="border-bottom-0">
-                                    {{ $user->nama }}
+                                    {{ $item->nama }}
                                 </td>
                                 <td class="border-bottom-0">
-                                    {{ $user->no_telp }}
+                                    {{ $item->no_telp }}
                                 </td>
                                 <td class="border-bottom-0 text-center">
-                                    <a href="#">
-                                        <i class="ti ti-edit"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti ti-trash" style="color: red"></i>
-                                    </a>
+                                    <div class="d-flex justify-content-center gap-1">
+                                        <button type="button" class="btn btn-primary px-2 py-1" data-bs-toggle="modal"
+                                            data-bs-target="#modal-edit-{{ $item->id }}">
+                                            <i class="ti ti-edit"></i>
+                                        </button>
+                                        <form method="POST" action="{{ url('daftar-user/' . $item->id) }}"
+                                            onsubmit="return confirm('Yakin untuk menghapus data!')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger px-2 py-1">
+                                                <i class="ti ti-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
-                    </tbody>
+                    </tbody> --}}
                 </table>
-
-                <a href="tambah.php">
-                    <button type="button" class="btn btn-primary m-2">Tambah Data Karyawan</button>
-                </a>
-
+                <div class="d-flex justify-content-end mt-2">
+                    <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal"
+                        data-bs-target="#create-modal">
+                        Tambah User
+                    </button>
+                </div>
             </div>
         </div>
     </div>
