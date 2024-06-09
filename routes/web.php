@@ -18,10 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('testing');
 });
+Route::get('/', function () {
+    return redirect('login');
+});
 
-Route::get('/login', [AuthController::class, 'login']);
+Route::get('login', [AuthController::class, 'index'])->name('login')->middleware('guest');
+Route::post('login', [AuthController::class, 'authenticate']);
+Route::post('logout', [AuthController::class, 'logout']);
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/daftar-user', [DashboardController::class, 'daftarUser']);
 Route::get('/daftar-buku', [DashboardController::class, 'daftarBuku']);
 Route::get('/peminjaman', [DashboardController::class, 'peminjaman']);

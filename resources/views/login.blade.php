@@ -24,18 +24,28 @@
                                     <img src="assets/img/logo.png" width="80" alt="" />
                                 </a>
                                 <p class="text-center">Peminjaman Buku</p>
-                                <form>
+                                @if (session()->has('error'))
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        {{ session('error') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                <form action="/login" method="POST">
+                                    @csrf
                                     <div class="mb-3">
                                         <label for="username" class="form-label">Username</label>
-                                        <input type="text" class="form-control" id="username"
-                                            placeholder="Username" />
+                                        <input type="text" class="form-control" id="username" name="username"
+                                            placeholder="Username" required />
                                     </div>
                                     <div class="mb-4">
                                         <label for="password" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="password"
-                                            placeholder="Password" />
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Password" required />
                                     </div>
-                                    <a href="#" class="btn btn-primary w-100 py-8 fs-4 mb-2 rounded-2">Login</a>
+                                    <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-2 rounded-2">
+                                        Login
+                                    </button>
                                 </form>
                             </div>
                         </div>

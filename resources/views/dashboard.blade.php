@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h5 class="fw-semibold">Welcome, Rizki Nugraha</h5>
+    <h5 class="fw-semibold">Welcome, {{ auth()->user()->name }}</h5>
     <p>{{ $tanggal }}</p>
     <div class="card">
         <div class="card-body">
