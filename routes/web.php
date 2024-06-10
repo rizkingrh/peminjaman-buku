@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DaftarBukuController;
 use App\Http\Controllers\DaftarUserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HistoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +34,9 @@ Route::post('logout', [AuthController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-Route::get('/daftar-buku', [DashboardController::class, 'daftarBuku']);
 Route::get('/peminjaman', [DashboardController::class, 'peminjaman']);
 Route::get('/pengembalian', [DashboardController::class, 'pengembalian']);
 
-Route::get('history', [DashboardController::class, 'history']);
-
 Route::resource('daftar-user', DaftarUserController::class);
+Route::resource('daftar-buku', DaftarBukuController::class);
+Route::resource('history', HistoryController::class);

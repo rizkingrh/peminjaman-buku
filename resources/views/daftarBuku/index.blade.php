@@ -9,7 +9,7 @@
     @endif
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">History Tags ID</h5>
+            <h5 class="card-title fw-semibold mb-4">Daftar Buku</h5>
             <div class="table-responsive">
                 <table class="table text-nowrap mb-0 align-middle table-striped">
                     <thead class="text-dark fs-4">
@@ -18,10 +18,19 @@
                                 <h6 class="fw-semibold mb-0">No.</h6>
                             </th>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Tags ID</h6>
+                                <h6 class="fw-semibold mb-0">ID Buku</h6>
                             </th>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Timestamp</h6>
+                                <h6 class="fw-semibold mb-0">Nama Buku</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Penerbit</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Jenis Buku</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Status</h6>
                             </th>
                             <th class="border-bottom-0 text-center">
                                 <h6 class="fw-semibold mb-0">Action</h6>
@@ -35,14 +44,27 @@
                                     {{ $loop->iteration }}
                                 </td>
                                 <td class="border-bottom-0">
-                                    {{ $item->encoded_id }}
+                                    {{ $item->id_buku }}
                                 </td>
                                 <td class="border-bottom-0">
-                                    {{ $item->created_at }}
+                                    {{ $item->nama_buku }}
+                                </td>
+                                <td class="border-bottom-0">
+                                    {{ $item->penerbit }}
+                                </td>
+                                <td class="border-bottom-0">
+                                    {{ $item->jenis }}
+                                </td>
+                                <td class="border-bottom-0">
+                                    {{ $item->status }}
                                 </td>
                                 <td class="border-bottom-0 text-center">
                                     <div class="d-flex justify-content-center gap-1">
-                                        <form method="POST" action="{{ url('history/' . $item->id) }}"
+                                        <button type="button" class="btn btn-primary px-2 py-1" data-bs-toggle="modal"
+                                            data-bs-target="#modal-edit-{{ $item->id }}">
+                                            <i class="ti ti-edit"></i>
+                                        </button>
+                                        <form method="POST" action="{{ url('daftar-buku/' . $item->id) }}"
                                             onsubmit="return confirm('Yakin untuk menghapus data!')">
                                             @csrf
                                             @method('DELETE')
@@ -56,7 +78,15 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-end mt-2">
+                    <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal"
+                        data-bs-target="#create-modal">
+                        Tambah Buku
+                    </button>
+                </div>
             </div>
         </div>
     </div>
+    @include('daftarBuku.create')
+    @include('daftarBuku.edit')
 @endsection

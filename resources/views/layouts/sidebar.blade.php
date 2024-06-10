@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="./ui-book.html" aria-expanded="false">
+                    <a class="sidebar-link" href="/daftar-buku" aria-expanded="false">
                         <span>
                             <i class="ti ti-books"></i>
                         </span>
