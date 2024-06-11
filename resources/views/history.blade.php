@@ -21,6 +21,12 @@
                                 <h6 class="fw-semibold mb-0">Tags ID</h6>
                             </th>
                             <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Status</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Keterangan</h6>
+                            </th>
+                            <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Timestamp</h6>
                             </th>
                             <th class="border-bottom-0 text-center">
@@ -36,6 +42,12 @@
                                 </td>
                                 <td class="border-bottom-0">
                                     {{ $item->encoded_id }}
+                                </td>
+                                <td class="border-bottom-0">
+                                    {{ $item->status }}
+                                </td>
+                                <td class="border-bottom-0">
+                                    {{ $item->keterangan }}
                                 </td>
                                 <td class="border-bottom-0">
                                     {{ $item->created_at }}
