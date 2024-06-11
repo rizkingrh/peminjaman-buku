@@ -5,6 +5,7 @@ use App\Http\Controllers\DaftarBukuController;
 use App\Http\Controllers\DaftarUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\PeminjamanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,4 +40,5 @@ Route::get('/pengembalian', [DashboardController::class, 'pengembalian']);
 
 Route::resource('daftar-user', DaftarUserController::class);
 Route::resource('daftar-buku', DaftarBukuController::class);
+Route::resource('peminjaman', PeminjamanController::class);
 Route::resource('history', HistoryController::class);

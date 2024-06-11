@@ -1,0 +1,85 @@
+@extends('layouts.main')
+
+@section('container')
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title fw-semibold mb-4">Peminjaman</h5>
+            <livewire:peminjaman />
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table text-nowrap mb-0 align-middle table-striped">
+                    <thead class="text-dark fs-4">
+                        <tr>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">No.</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">ID Buku</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Nama Buku</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Penerbit</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Jenis Buku</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Status</h6>
+                            </th>
+                        </tr>
+                    </thead>
+                    {{-- <tbody>
+                        @foreach ($data as $item)
+                            <tr>
+                                <td class="border-bottom-0">
+                                    {{ $loop->iteration }}
+                                </td>
+                                <td class="border-bottom-0">
+                                    {{ $item->id_buku }}
+                                </td>
+                                <td class="border-bottom-0">
+                                    {{ $item->nama_buku }}
+                                </td>
+                                <td class="border-bottom-0">
+                                    {{ $item->penerbit }}
+                                </td>
+                                <td class="border-bottom-0">
+                                    {{ $item->jenis }}
+                                </td>
+                                <td class="border-bottom-0">
+                                    {{ $item->status }}
+                                </td>
+                                <td class="border-bottom-0 text-center">
+                                    <div class="d-flex justify-content-center gap-1">
+                                        <button type="button" class="btn btn-primary px-2 py-1" data-bs-toggle="modal"
+                                            data-bs-target="#modal-edit-{{ $item->id }}">
+                                            <i class="ti ti-edit"></i>
+                                        </button>
+                                        <form method="POST" action="{{ url('daftar-buku/' . $item->id) }}"
+                                            onsubmit="return confirm('Yakin untuk menghapus data!')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger px-2 py-1">
+                                                <i class="ti ti-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody> --}}
+                </table>
+                <div class="d-flex justify-content-end mt-2">
+                    <button type="submit" class="btn btn-primary m-2">
+                        Simpan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

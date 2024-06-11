@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+                    <a class="sidebar-link" href="/peminjaman" aria-expanded="false">
                         <span>
                             <i class="ti ti-upload"></i>
                         </span>

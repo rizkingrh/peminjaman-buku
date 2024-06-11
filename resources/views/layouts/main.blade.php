@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/styles.min.css" />
     {{-- Tabler Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    @livewireStyles
     <title>Peminjaman Buku</title>
 </head>
 
@@ -34,6 +35,7 @@
 
         </div>
     </div>
+    @livewireScripts
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/sidebarmenu.js"></script>
