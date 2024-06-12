@@ -14,6 +14,7 @@ class Peminjaman extends Component
     public $message = '';
     public $bukuDipinjam = [];
     public $idBuku;
+    public $messagePeminjaman = '';
 
     public function mount() {
         $this->idPeminjam = '';
@@ -75,9 +76,9 @@ class Peminjaman extends Component
                 }
             }
             $this->bukuDipinjam = [];
-            $this->message = "Peminjaman disimpan.";
+            $this->messagePeminjaman = "Peminjaman disimpan.";
         } else {
-            $this->message = "User tidak ditemukan.";
+            $this->messagePeminjaman = "User tidak ditemukan.";
         }
     }
 

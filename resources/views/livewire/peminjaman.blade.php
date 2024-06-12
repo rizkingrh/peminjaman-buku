@@ -1,4 +1,11 @@
 <div>
+    @if ($messagePeminjaman != '')
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ $messagePeminjaman }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Peminjaman</h5>
