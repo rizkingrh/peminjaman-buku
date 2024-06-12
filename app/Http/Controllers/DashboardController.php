@@ -18,7 +18,16 @@ class DashboardController extends Controller
         return view('history');
     }
 
+    public function peminjaman() {
+        return view('peminjaman');
+    }
+
     public function pengembalian() {
         return view('pengembalian');
+    }
+
+    public function historyPeminjaman() {
+        $data = Peminjaman::orderby('id', 'desc')->with('buku', 'user')->get();
+        return view('history-peminjaman', compact('data'));
     }
 }

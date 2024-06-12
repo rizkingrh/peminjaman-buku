@@ -8,6 +8,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\PeminjamanController;
 use App\Livewire\Pengembalian;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,27 +21,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('testing');
-});
+
 Route::get('/', function () {
     return redirect('login');
-});
-Route::get('/tesmodal', function () {
-    return view('tesmodal');
 });
 
 Route::get('login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('login', [AuthController::class, 'authenticate']);
 Route::post('logout', [AuthController::class, 'logout']);
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-Route::get('/peminjaman', [DashboardController::class, 'peminjaman']);
 
-Route::get('pengembalian', [DashboardController::class, 'pengembalian']);
+Route::get('peminjaman', [DashboardController::class, 'peminjaman'])->middleware('auth');
+Route::get('pengembalian', [DashboardController::class, 'pengembalian'])->middleware('auth');
 
-Route::resource('daftar-user', DaftarUserController::class);
-Route::resource('daftar-buku', DaftarBukuController::class);
-Route::resource('peminjaman', PeminjamanController::class);
-Route::resource('history', HistoryController::class);
+Route::resource('daftar-user', DaftarUserController::class)->middleware('auth');
+Route::resource('daftar-buku', DaftarBukuController::class)->middleware('auth');
+Route::resource('history', HistoryController::class)->middleware('auth');
+Route::get('history-peminjaman', [DashboardController::class, 'historyPeminjaman'])->middleware('auth');

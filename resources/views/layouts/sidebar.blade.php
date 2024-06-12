@@ -65,7 +65,15 @@
                         <span>
                             <i class="ti ti-history"></i>
                         </span>
-                        <span class="hide-menu">Tags History</span>
+                        <span class="hide-menu">History Tags</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/history-peminjaman" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-corner-right-up-double"></i>
+                        </span>
+                        <span class="hide-menu">History Peminjaman</span>
                     </a>
                 </li>
             </ul>

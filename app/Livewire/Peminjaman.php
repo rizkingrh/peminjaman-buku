@@ -60,25 +60,27 @@ class Peminjaman extends Component
         $user = DaftarUser::where('id_user', $this->idPeminjam)->first();
         if ($user) {
             foreach ($this->bukuDipinjam as $buku) {
-                // Menyimpan data peminjaman
-                ModelsPeminjaman::create([
-                    'id_user' => $user->id_user,
-                    'id_buku' => $buku['id_buku'],
-                    'peminjaman' => now(),
-                    'status' => 'Dipinjam',
-                ]);
-
-                // Mengubah status buku menjadi "dipinjam"
                 $buku = DaftarBuku::where('id_buku', $buku['id_buku'])->first();
-                if ($buku) {
+
+                if ($buku && $buku->status == 'Tersedia') { 
+                    ModelsPeminjaman::create([
+                        'id_user' => $user->id_user,
+                        'id_buku' => $buku['id_buku'],
+                        'peminjaman' => now(),
+                    ]);
+
                     $buku->status = 'Dipinjam';
                     $buku->save();
+
+                    $this->messagePeminjaman = "Peminjaman disimpan.";
+                } else {
+                    $this->messagePeminjaman = "Terdapat buku yang sudah dipinjam.";
+                    break;
                 }
             }
             $this->bukuDipinjam = [];
-            $this->messagePeminjaman = "Peminjaman disimpan.";
         } else {
-            $this->messagePeminjaman = "User tidak ditemukan.";
+            $this->messagePeminjaman = "Silahkan untuk menempelkan RFID Card";
         }
     }
 
