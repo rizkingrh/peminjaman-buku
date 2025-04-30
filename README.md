@@ -1,66 +1,128 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚 IoT Book Borrowing System 🤖
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📋 Project Overview
+This project is an automated book borrowing system that leverages Internet of Things (IoT) technology to streamline the process of borrowing and returning books. Built as a final project for an Internet of Things course, this system utilizes Raspberry Pi as the main controller alongside RFID sensors to identify books and users without manual input.
 
-## About Laravel
+The traditional book borrowing process is often time-consuming, requiring staff assistance and manual data entry which can lead to errors and inefficiencies. This automated system was developed to increases borrowing efficiency, reduces administrative workload, provides real-time tracking of book, and improves the overall user experience in libraries or educational institutions.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Key Features
+- **RFID-Based Identification**: Contactless scanning of books and user IDs
+- **Automated Borrowing Process**: Self-service book checkout without staff intervention
+- **Real-Time Data Processing**: Instant recording of book borrowing and returns
+- **User Authentication**: Secure login system with role-based access
+- **Book Management**: Comprehensive database of all available books
+- **Borrowing Records**: Tracking of all current and past book loans
+- **Return Management**: Automated processing of book returns
+- **Sensor Reading History**: Logs of sensor interactions for system monitoring
+- **Web Interface**: User-friendly dashboard for both users and administrators
+- **RESTful API**: Backend architecture for communication between hardware and software
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🖼️ Preview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Login Screen
+![Login Screen](assets/login.png)
 
-## Learning Laravel
+### Dashboard
+![Home Dashboard](assets/home.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### User Management
+![User List](assets/daftar_user.png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Book Inventory
+![Book List](assets/daftar_buku.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Borrowing Management
+![Borrowing Process](assets/peminjaman.png)
 
-## Laravel Sponsors
+### Return Management
+![Return Process](assets/pengembalian.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Return Details
+![Return Details](assets/detail_pengembalian.png)
 
-### Premium Partners
+### Borrowing History
+![Borrowing History](assets/history_peminjaman.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Sensor Reading History
+![Sensor Readings](assets/history_pembacaanSensor.png)
 
-## Contributing
+### Data Entry Form
+![Modal Form](assets/modal_form.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Hardware Setup
+![RFID Wiring Diagram](assets/wiring_rfidBook.jpg)
 
-## Code of Conduct
+### Database Design
+![ERD Diagram](assets/erd.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Complete Mockup
+[View Full Figma Mockup]([https://drive.google.com/file/d/1kogj5yKyyR48F4PgfXbCA97CmMayh413/view?usp=sharing](https://drive.google.com/file/d/1_LcMYifSr5sVfYnO2sBgnOnXvg98nNlK/view?usp=sharing))
 
-## Security Vulnerabilities
+## 🛠️ Technologies
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Hardware 🔌
+- **Raspberry Pi**: Main controller for the IoT system
+- **RFID Reader/Writer**: For scanning book tags and user IDs
+- **RFID Sticker Tags**: Attached to books for identification
+- **LED indicators**: Visual feedback for successful/failed operations
+- **LCD Display**: To inform scan details in text
+- **Buzzer**: Audio feedback for system operations
 
-## License
+### Software 💻
+- **Frontend**:
+  - HTML, CSS, JavaScript
+  - Bootstrap for responsive design
+  - Figma for UI/UX design and prototyping
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Backend** 🔧:
+  - Laravel PHP Framework
+  - RESTful API architecture
+  - Authentication middleware
+
+- **Database** 💾:
+  - MySQL
+  - MySQL Workbench for database design
+
+- **IoT Programming**:
+  - Python for Raspberry Pi
+  - HTTP requests for API communication
+
+## 🚀 System Architecture
+
+The Book Borrowing System is structured into three main components:
+
+1. **Hardware Layer**: 
+   - Raspberry Pi connected to RFID sensors
+   - Physical interface for book scanning
+   - LCD Display for display text
+   - LED/Buzzer feedback mechanisms
+
+2. **Communication Layer**:
+   - RESTful API for data transmission
+   - Secure authentication for API access
+   - Real-time data synchronization
+
+3. **Application Layer**:
+   - Web interface for users and administrators
+   - Database for storing book and user information
+   - Business logic for handling borrowing rules
+
+## 🔄 How It Works
+
+1. A user approaches the borrowing station with their ID card and books
+2. They scan their RFID-enabled ID card for authentication
+3. Upon successful authentication, they scan the books they wish to borrow
+4. The Raspberry Pi reads the RFID tags and sends the data to the server via API
+5. The system processes the request, updates the database, and sends confirmation
+6. The user receives visual and audio feedback confirming successful borrowing
+7. For returns, the process is similar, with books being scanned and marked as returned in the system
+
+## 🚀 Future Improvements
+- **Fine Integration**: Automatic calculation and notification of overdue fines
+- **Book Recommendation System**: AI-based recommendations based on borrowing history
+- **Mobile Application**: Companion app for iOS and Android
+- **SMS/Email Notifications**: Alerts for due dates and confirmations
+- **Multiple Station Support**: Scaling to support multiple borrowing stations
+- **Integration with Library Catalog Systems**: Connecting with existing library infrastructure
+- **Advanced Analytics**: Usage patterns and popular book tracking
+- **Facial Recognition**: Additional authentication layer for enhanced security
