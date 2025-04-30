@@ -55,6 +55,9 @@ The traditional book borrowing process is often time-consuming, requiring staff 
 ### Complete Mockup
 [View Full Figma Mockup](https://drive.google.com/file/d/1_LcMYifSr5sVfYnO2sBgnOnXvg98nNlK/view?usp=sharing)
 
+### Raspberry Pi Code
+[View Raspberry Pi Code Program](https://github.com/rizkingrh/Arduino/tree/main/Raspberry%20Pi%20Code)
+
 ## 🛠️ Technologies
 
 ### Hardware 🔌
