@@ -70,7 +70,7 @@ The traditional book borrowing process is often time-consuming, requiring staff 
 
 ### Software 💻
 - **Frontend**:
-  - HTML, CSS, JavaScript
+  - Laravel Blade, JavaScript
   - Bootstrap for responsive design
   - Figma for UI/UX design and prototyping
 
