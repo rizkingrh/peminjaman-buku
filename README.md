@@ -49,14 +49,11 @@ The traditional book borrowing process is often time-consuming, requiring staff 
 ### Data Entry Form
 ![Modal Form](assets/modal_form.png)
 
-### Hardware Setup
+### Wiring Diagram
 ![RFID Wiring Diagram](assets/wiring_rfidBook.jpg)
 
-### Database Design
-![ERD Diagram](assets/erd.png)
-
 ### Complete Mockup
-[View Full Figma Mockup]([https://drive.google.com/file/d/1kogj5yKyyR48F4PgfXbCA97CmMayh413/view?usp=sharing](https://drive.google.com/file/d/1_LcMYifSr5sVfYnO2sBgnOnXvg98nNlK/view?usp=sharing))
+[View Full Figma Mockup](https://drive.google.com/file/d/1_LcMYifSr5sVfYnO2sBgnOnXvg98nNlK/view?usp=sharing)
 
 ## 🛠️ Technologies
 
